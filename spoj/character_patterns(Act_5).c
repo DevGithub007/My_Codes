@@ -1,0 +1,67 @@
+#include<stdio.h>
+int main()
+{
+long long t,l,c,i,j,k,p,q,r,s,ss,pp,qq;
+	scanf("%lld",&t);
+	while(t--)
+	{
+		scanf("%lld %lld %lld",&l,&c,&s);
+		p=(l*s+l+1);
+		q=(c*s+c+1);
+		for(i=1,r=1;i<=p;i++)
+		{
+			pp=1,qq=1;
+			for(j=1,k=1;j<=q;j++)
+			{
+				if(i==r)
+				{
+					printf("*");
+				}
+				else 
+				{
+				if(j==k)
+				{
+				printf("*");
+				k+=s+1;
+				ss=s;
+				pp++;
+			    }
+				else
+				{
+				if(pp%2!=0)
+				{
+					if(ss==s)
+					{
+						printf("\\");
+						ss--;
+					}
+					else
+					{
+					printf(".");
+				    ss--;
+					}
+			    }
+			    else
+			    {
+			    if(ss==0)
+					{
+						printf("\/");
+						ss--;
+					}
+					else
+					{
+					printf(".");
+				    ss--;
+					}	
+				}
+			    }
+			    }
+			}
+			printf("\n");
+			if(i==r)
+			r+=s+1;
+		}
+		printf("\n");
+	}
+	return 0;
+}

@@ -1,0 +1,39 @@
+#include<stdio.h>
+    void main()
+    {
+    int t,n,a[100001],i,j,k,f;
+    long int sum;
+    scanf("%d",&t);
+    while(t--)
+    {
+    scanf("%d",&n);
+    f=0;
+    sum=0;
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+    if(a[i]<2)
+    {
+    f=-1;
+    break;
+    }
+    else
+    sum+=a[i];
+    }
+    k=a[0];
+    for(i=1;i<n;i++)
+    {
+    if(k<a[i])
+    k=k;
+    else
+    k=a[i];
+    }
+    sum=sum-k+2;
+    if(f==-1)
+    printf("-1");
+    else
+    printf("%ld",sum);
+    printf("\n");
+    }
+    }  
